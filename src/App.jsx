@@ -39,7 +39,7 @@ function App() {
         setInputText        // ← Truyền xuống để Home có thể cập nhật
       }}
     >
-      <BrowserRouter>
+      <BrowserRouter basename="/kanjipractiser">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/TracNghiem" element={<TracNghiemHome />} />

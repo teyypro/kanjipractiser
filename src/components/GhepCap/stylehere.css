@@ -1,0 +1,333 @@
+/* stylehere.css */
+
+/* Container chính */
+.ghep-cap-home {
+    min-height: 100vh;
+    width: 100vw;
+background-color: #000000         ;
+    padding: 1rem 1rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.game-container{
+  width: 45rem;
+}
+
+.choose-container h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  text-align: center;
+  margin: 0;
+}
+
+.radio-item {
+  margin: 12px 0;
+  font-size: 1.1rem;
+}
+
+.radio-item label {
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 999px;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.radio-item input[type="radio"] {
+  margin-right: 12px;
+}
+
+.radio-item label:hover {
+  background: rgba(52, 152, 219, 0.1);
+}
+
+.time-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px 0 32px;
+}
+
+.time-radio {
+  font-size: 1.1rem;
+}
+
+/* Nút bắt đầu */
+
+.continue-btn,
+.stop-btn,
+.return-btn {
+  padding: 14px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.25s;
+  margin: 12px;
+}
+
+.start-btn,
+.continue-btn {
+  background: #94B4C1;
+  color: white;
+}
+
+.start-btn:hover,
+.continue-btn:hover {
+  background: #219653;
+  transform: translateY(-2px);
+}
+
+.stop-btn,
+.return-btn {
+  background: #7f8c8d;
+  color: white;
+}
+
+.stop-btn:hover,
+.return-btn:hover {
+  background: #95a5a6;
+}
+
+/* Game playing screen */
+.game-info {
+  margin-bottom: 24px;
+}
+
+.timer-bar-container {
+  height: 10px;
+  background: #ecf0f1;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.timer-bar {
+  height: 100%;
+  transition: width 1s linear, background-color 0.4s;
+  background-color: #2ecc71;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 0 8px;
+    justify-content: space-between;
+}
+
+.status span {
+  color: white;
+}
+
+.warning {
+  color: #e74c3c;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.score strong {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+/* Cards grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* hoặc repeat(4, 1fr) nếu muốn nhỏ hơn */
+  gap: 16px;
+  max-width: 100%;
+}
+
+.card {
+  aspect-ratio: 4/3;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #2c3e50;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.card:hover:not(.matched):not(.wrong-temp) {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+/* Trạng thái thẻ */
+.card.selected {
+  background: #3498db;
+  color: white;
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+}
+
+.card.wrong-temp {
+  background: #e74c3c;
+  color: white;
+  animation: shake 0.5s;
+  transform: scale(1.05);
+}
+
+.card.matched {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Hiệu ứng rung khi sai */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-6px); }
+  100% { transform: translateX(0); }
+}
+
+/* Trang kết thúc */
+.summary-container {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.summary-container h1 {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+  color: #e74c3c;
+}
+
+.lose-reason {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.lose-reason.time { color: #f39c12; }
+.lose-reason.wrong { color: #c0392b; }
+
+.summary-stats p {
+  font-size: 1.4rem;
+  margin: 16px 0;
+}
+
+.summary-buttons {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.summary-container p{
+  font-size: 3rem;
+  color: #ffffff;
+}
+/* Responsive */
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+  }
+  
+  .card {
+     aspect-ratio: 3/4;
+          font-size: clamp(9px, 5vw, 30px);
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+                line-height: 1.2;
+  }
+  
+  .start-btn, .continue-btn {
+    padding: 12px 32px;
+    font-size: 1.1rem;
+  }
+} 
+
+/* Nhóm tùy chọn chung */
+.options-group,
+.time-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+  padding: 0 16px;
+}
+
+/* Mỗi item tùy chọn (chế độ hoặc thời gian) */
+.option-item,
+.time-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 0 10px;
+    border-radius: 12px;
+    background: rgba(0,0,0,.1);
+    transition: all 0.2s ease;
+}
+
+.option-item:hover,
+.time-item:hover {
+  background: rgba(52, 152, 219, 0.15);
+  border-color: #3498db;
+}
+
+/* Khi được chọn */
+.option-item input[type="radio"]:checked + label,
+.time-item input[type="radio"]:checked + label {
+  font-weight: bold;
+  color: #ff0000;
+}
+
+/* Ẩn input radio mặc định, chỉ dùng label làm nút */
+.option-item input[type="radio"],
+.time-item input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Style label như nút */
+.option-item label,
+.time-item label {
+  flex: 1;
+  cursor: pointer;
+  padding: 8px 0;
+  text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .options-group,
+  .time-group {
+    gap: 10px;
+    padding: 0 8px;
+  }
+
+  .option-item,
+  .time-item {
+    font-size: 1rem;
+  }
+}

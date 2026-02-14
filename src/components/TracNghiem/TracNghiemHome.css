@@ -1,0 +1,132 @@
+/* TracNghiemHome.css - Modern light theme for mode selection */
+
+.game-page{
+    display: flex;
+    flex-direction: column;
+    width: 1080px;
+    align-items: center;
+}
+
+.trac-nghiem-home {
+    min-height: 100vh;
+        width: 100vw;
+background-color: #000000; 
+    padding: 1rem 1rem;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #1e293b;
+        display: flex;
+      align-items: flex-start;
+          justify-content: center;
+}
+
+.choose-container {
+  width: 1080px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem 1.8rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 1.8rem;
+  color: #1e40af;
+}
+
+.mode-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-block: 1rem;
+    flex-wrap: wrap;
+}
+
+.mode-btn {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.9rem 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border: 0;
+  border-radius: 0;
+  background: rgb(255, 255, 255);
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.mode-btn:hover {
+  color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.mode-btn.active {
+  outline: 0;
+  background: #213448;
+  color: white;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.option-list {
+  margin: 0;
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.5rem 0.5rem;
+  margin: 0.6rem 0;
+  background: #f8fafc;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1.05rem;
+}
+
+.option-label:hover {
+  background: #eff6ff;
+}
+
+.option-label input[type="radio"] {
+  accent-color: #3b82f6;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.action-buttons {
+  margin: 0;
+}
+
+.start-btn {
+  width: 15rem;
+  padding: 1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  background: #213448;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+  transition: all 0.3s;
+}
+
+.start-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(59, 130, 246, 0.35);
+}
+
+.start-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (min-width: 480px) {
+
+}
